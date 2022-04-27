@@ -7,12 +7,11 @@ test('Проверка дабавленик персонажа', () => {
   expect(members).toBe('ivan');
 });
 
-// test('Ошибка 2 одинаковых персонажа', () => {
-//   let result1 = new Team();
-//   result1.add('petr');
-//   result1.add('petr');
-//   expect(result1).toThrowError('Данный персонаж уже был добавлен в команду');
-// });
+test('Ошибка 2 одинаковых персонажа', () => {
+  let result1 = new Team();
+  result1.add('petr');
+  expect(()=>result1.add('petr')).toThrow('Данный персонаж уже был добавлен в команду')
+});
 
 test('Добавление несколих персонажей', () => {
       let set = new Team();
